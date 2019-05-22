@@ -1,8 +1,8 @@
 {
-  "name": "tab-homepage",
-  "description": "Homepage for Tab for a Cause (https://tab.gladly.io)",
+  "name": "search-homepage",
+  "description": "Homepage for Search for a Cause (https://search.gladly.io)",
   "version": "1.0.0",
-  "author": "The Tab for a Cause Team",
+  "author": "The Gladly Team",
   "dependencies": {
     "@material-ui/core": "^4.0.0-rc.0",
     "@material-ui/icons": "^4.0.0-rc.0",
