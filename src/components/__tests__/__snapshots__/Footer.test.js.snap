@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer matches expected snapshot 1`] = `
+<div
+  style={
+    Object {
+      "background": "rgba(128, 128, 128, 0.04)",
+      "paddingBottom": 20,
+      "paddingLeft": 40,
+      "paddingRight": 40,
+      "paddingTop": 1,
+    }
+  }
+>
+  <WithStyles(ForwardRef(Divider))
+    style={
+      Object {
+        "marginBottom": 20,
+        "width": "100%",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexWrap": "nowrap",
+          "justifyContent": "flex-start",
+        }
+      }
+    >
+      <Link
+        hoverStyle={Object {}}
+        style={Object {}}
+        to="/"
+      >
+        <img
+          src="test-file-stub"
+          style={
+            Object {
+              "height": 43,
+            }
+          }
+        />
+      </Link>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "justifyContent": "flex-start",
+            "marginLeft": 30,
+          }
+        }
+      >
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="https://gladly.zendesk.com/hc/en-us/categories/201939608-Tab-for-a-Cause"
+        >
+          Help
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/adblockers/"
+        >
+          Adblockers
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/financials/"
+        >
+          Financials
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/terms/"
+        >
+          Terms
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/privacy/"
+        >
+          Privacy
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/team/"
+        >
+          Team
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/contact/"
+        >
+          Contact
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/jobs/"
+        >
+          Jobs
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="https://orders.gladly.io"
+        >
+          Advertisers
+        </Link>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "paddingTop": 4,
+        }
+      }
+    >
+      <Link
+        hoverStyle={Object {}}
+        style={
+          Object {
+            "margin": 12,
+          }
+        }
+        to="https://www.facebook.com/TabForACause"
+      >
+        <IconWrapper
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "height": 20,
+              "width": 20,
+            }
+          }
+        >
+          <Icon />
+        </IconWrapper>
+      </Link>
+      <Link
+        hoverStyle={Object {}}
+        style={
+          Object {
+            "margin": 12,
+          }
+        }
+        to="https://twitter.com/TabForACause"
+      >
+        <IconWrapper
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "height": 20,
+              "width": 20,
+            }
+          }
+        >
+          <Icon />
+        </IconWrapper>
+      </Link>
+    </div>
+  </div>
+</div>
+`;
