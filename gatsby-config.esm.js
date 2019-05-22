@@ -1,6 +1,6 @@
 /* globals process */
 
-var domain = process.env.GATSBY_DOMAIN || 'tab.gladly.io'
+var domain = process.env.GATSBY_DOMAIN || 'search.gladly.io'
 var protocol = 'https'
 var baseURL = `${protocol}://${domain}`
 

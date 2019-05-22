@@ -22,7 +22,7 @@ describe('Link', () => {
   it('uses anchor elem when navigating to an absolute URL', () => {
     const Link = require('../Link').default
     const testUrls = [
-      'https://tab.gladly.io/',
+      'https://search.gladly.io/',
       'localhost:3000/some-url/here/',
       'https://gladly.io',
     ]
@@ -46,7 +46,7 @@ describe('Link', () => {
     const someStyle = { fontSize: 12, color: '#cdcdcd' }
     const wrapper = shallow(
       <Link
-        to={'https://tab.gladly.io/'}
+        to={'https://search.gladly.io/'}
         style={someStyle}
         hoverStyle={{ color: 'red' }}
       />
@@ -72,7 +72,7 @@ describe('Link', () => {
     const someStyle = { fontSize: 12, color: '#cdcdcd' }
     const wrapper = shallow(
       <Link
-        to={'https://tab.gladly.io/'}
+        to={'https://search.gladly.io/'}
         style={someStyle}
         hoverStyle={{ color: 'red' }}
       />

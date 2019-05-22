@@ -35,7 +35,7 @@ describe('index layout page', () => {
     const { LayoutContent } = require('../Layout')
     const wrapper = shallow(<LayoutContent {...getMockProps()} />)
     const elem = wrapper.find('link[rel="canonical"]')
-    expect(elem.prop('href')).toBe('https://tab.gladly.io/')
+    expect(elem.prop('href')).toBe('https://search.gladly.io/')
   })
 
   it('sets the default page title using Helmet', () => {
@@ -64,7 +64,7 @@ describe('index layout page', () => {
     const wrapper = shallow(<LayoutContent {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:image"]')
     expect(elem.prop('content')).toBe(
-      'https://tab.gladly.io/static/some-image.png'
+      'https://search.gladly.io/static/some-image.png'
     )
   })
 })

@@ -1,5 +1,5 @@
 /* globals process */
-export const domain = process.env.GATSBY_DOMAIN || 'tab.gladly.io'
+export const domain = process.env.GATSBY_DOMAIN || 'search.gladly.io'
 export const protocol = 'https'
 export const baseURL = `${protocol}://${domain}`
 

@@ -28,14 +28,14 @@ describe('navigation utils', () => {
 
   test('getAbsoluteURL works for a passed path, falling back on hardcoded production domain', () => {
     const getAbsoluteURL = require('../navigation').getAbsoluteURL
-    expect(getAbsoluteURL('/')).toBe('https://tab.gladly.io/')
-    expect(getAbsoluteURL('/blah/')).toBe('https://tab.gladly.io/blah/')
+    expect(getAbsoluteURL('/')).toBe('https://search.gladly.io/')
+    expect(getAbsoluteURL('/blah/')).toBe('https://search.gladly.io/blah/')
   })
 
   test('getAbsoluteURL does not modify a URL that is already absolute,falling back on hardcoded production domain', () => {
     const getAbsoluteURL = require('../navigation').getAbsoluteURL
-    expect(getAbsoluteURL('https://tab.gladly.io/blah/')).toBe(
-      'https://tab.gladly.io/blah/'
+    expect(getAbsoluteURL('https://search.gladly.io/blah/')).toBe(
+      'https://search.gladly.io/blah/'
     )
   })
 })
