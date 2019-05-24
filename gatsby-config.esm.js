@@ -53,22 +53,6 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
-    // TODO: remove
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-24159386-1',
-        // Puts tracking script in the head instead of the body
-        head: false,
-      },
-    },
-    // TODO: remove
-    {
-      resolve: `gatsby-plugin-facebook-pixel`,
-      options: {
-        pixelId: '1813501258922708',
-      },
-    },
     // TODO: update ID
     {
       resolve: 'gatsby-plugin-sentry',
