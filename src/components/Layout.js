@@ -10,7 +10,6 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from 'src/components/Header'
-import Footer from 'src/components/Footer'
 
 import { ThemeProvider } from '@material-ui/styles'
 import defaultTheme from 'src/themes/theme'
@@ -92,7 +91,6 @@ export const LayoutContent = props => {
             {children}
           </div>
         </div>
-        <Footer style={{ flexShrink: 0 }} />
       </div>
     </ThemeProvider>
   )
