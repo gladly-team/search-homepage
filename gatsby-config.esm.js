@@ -6,16 +6,15 @@ var baseURL = `${protocol}://${domain}`
 
 module.exports = {
   siteMetadata: {
-    title: 'Tab for a Cause',
+    title: 'Search for a Cause',
     domain: `${domain}`,
     siteUrl: `https://${domain}`,
     keywords:
-      'tab for a cause, charity, tab, cause, giving, extension, browser, advertising',
+      'search for a cause, charity, search, cause, giving, extension, browser, advertising',
     descriptionLong:
-      "Raise money for charity with every browser tab you open. It doesn't cost you a thing.",
-    descriptionShort:
-      'Raise money for charity with every browser tab you open.',
-    metaTagCallToAction: 'Join me on Tab for a Cause!',
+      "Raise money for charity every time you search. It doesn't cost you a thing.",
+    descriptionShort: 'Raise money for charity every time you search.',
+    metaTagCallToAction: 'Join me on Search for a Cause!',
     twitterHandle: '@TabForACause',
   },
   plugins: [
@@ -54,6 +53,7 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    // TODO: remove
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -62,12 +62,14 @@ module.exports = {
         head: false,
       },
     },
+    // TODO: remove
     {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
         pixelId: '1813501258922708',
       },
     },
+    // TODO: update ID
     {
       resolve: 'gatsby-plugin-sentry',
       options: {
