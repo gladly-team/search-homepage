@@ -53,11 +53,10 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
-    // TODO: update ID
     {
       resolve: 'gatsby-plugin-sentry',
       options: {
-        dsn: 'https://8cb64ec80165437b98905b07296ddc3f@sentry.io/1232334',
+        dsn: 'https://38d9e31224b04e4aba61274d50ca3cca@sentry.io/1467750',
       },
     },
   ],
