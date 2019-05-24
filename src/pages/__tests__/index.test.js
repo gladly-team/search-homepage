@@ -36,7 +36,7 @@ describe('index page', () => {
     mockProps.pageContext = { referrer: { id: 123 } }
     shallow(<IndexPage {...mockProps} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
-      'tab.referralData.referringChannel',
+      'search.referralData.referringChannel',
       123
     )
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
@@ -66,7 +66,7 @@ describe('index page', () => {
 
     shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
-      'tab.referralData.referringChannel',
+      'search.referralData.referringChannel',
       234
     )
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
@@ -125,7 +125,7 @@ describe('index page', () => {
 
     shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
-      'tab.referralData.referringUser',
+      'search.referralData.referringUser',
       'bobert'
     )
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
