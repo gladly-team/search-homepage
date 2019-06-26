@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+require('./src/themes/global.css')
+
 // https://github.com/gatsbyjs/gatsby/issues/2177#issuecomment-382280801
 export const onClientEntry = () => {
   // Don't need to do anything here, but if you don't
