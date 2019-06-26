@@ -32,7 +32,7 @@ const styles = theme => ({
   centerContent: {
     display: 'flex',
     flexDirection: 'column',
-    paddingBottom: 40,
+    paddingBottom: 80,
     width: 500,
     maxWidth: '80%',
     minWidth: 300,
