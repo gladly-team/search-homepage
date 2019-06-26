@@ -22,7 +22,7 @@ export const lightestShadingColor = 'rgba(128, 128, 128, 0.04)'
 export const lightestShadingColorNoOpacity = '#fafafa'
 
 // Theme
-export const primaryMainColor = '#9d4ba3'
+export const primaryMainColor = '#00b597'
 export const primaryContrastTextColor = '#fff'
 export const secondaryMainColor = '#4a90e2'
 export const secondaryContrastTextColor = '#fff'
