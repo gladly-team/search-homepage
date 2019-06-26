@@ -148,7 +148,9 @@ class IndexPage extends React.Component {
 
   search() {
     const { query } = this.state
-    console.log(`Going to search for ${query}`)
+    window.location = `https://tab.gladly.io/search?q=${encodeURIComponent(
+      query
+    )}&src=self`
   }
 
   render() {
