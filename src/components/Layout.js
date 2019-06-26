@@ -1,15 +1,7 @@
-// Eventually will have eslint rules for Gatsby:
-// https://github.com/gatsbyjs/gatsby/issues/2446
-// Currently using linting recommendations from eslint,
-// Prettier, and React:
-// https://prettier.io/docs/en/eslint.html#why-not-both
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-
-import Header from 'src/components/Header'
 
 import { ThemeProvider } from '@material-ui/styles'
 import defaultTheme from 'src/themes/theme'
@@ -17,12 +9,11 @@ import Favicon from 'src/img/logo32x32.png'
 import openGraphImg from 'src/img/opengraph-img.png'
 import { domain, getAbsoluteURL } from 'src/utils/navigation'
 
-// Use flexbox to make sure the footer sticks to the bottom of the page:
-// https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
 export const LayoutContent = props => {
   const { children, data, location } = props
   const absoluteUrl = getAbsoluteURL(location.pathname)
   const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <div
@@ -81,8 +72,6 @@ export const LayoutContent = props => {
             <meta name="twitter:image" content={openGraphImgAbsolutePath} />
             <meta name="twitter:domain" content={domain} />
           </Helmet>
-
-          <Header siteTitle={data.site.siteMetadata.title} />
           <div
             style={{
               paddingTop: 0,
