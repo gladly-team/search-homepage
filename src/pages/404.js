@@ -6,7 +6,7 @@ import Link from 'src/components/Link'
 import { homeURL } from 'src/utils/navigation'
 import { withTheme } from '@material-ui/styles'
 import styles from './404.module.css'
-import Layout from 'src/components/Layout'
+import Metadata from 'src/components/Metadata'
 
 class NotFoundPage extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class NotFoundPage extends React.Component {
     const openGraphTitle = 'Oops! No page here.'
     const openGraphDescription = 'This page seems to be missing.'
     return (
-      <Layout location={location}>
+      <Metadata location={location}>
         <div
           style={{
             height: '100%',
@@ -52,7 +52,7 @@ class NotFoundPage extends React.Component {
             </Link>
           </div>
         </div>
-      </Layout>
+      </Metadata>
     )
   }
 }

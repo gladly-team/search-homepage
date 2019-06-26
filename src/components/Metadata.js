@@ -9,7 +9,7 @@ import Favicon from 'src/img/logo32x32.png'
 import openGraphImg from 'src/img/opengraph-img.png'
 import { domain, getAbsoluteURL } from 'src/utils/navigation'
 
-export const LayoutContent = props => {
+export const MetadataContent = props => {
   const { children, data, location } = props
   const absoluteUrl = getAbsoluteURL(location.pathname)
   const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
@@ -85,7 +85,7 @@ export const LayoutContent = props => {
   )
 }
 
-LayoutContent.propTypes = {
+MetadataContent.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -107,12 +107,12 @@ LayoutContent.propTypes = {
   }),
 }
 
-LayoutContent.displayName = 'LayoutContent'
+MetadataContent.displayName = 'MetadataContent'
 
-const Layout = props => (
+const Metadata = props => (
   <StaticQuery
     query={graphql`
-      query LayoutQuery {
+      query MetadataQuery {
         site {
           siteMetadata {
             descriptionLong
@@ -126,14 +126,14 @@ const Layout = props => (
       }
     `}
     render={data => (
-      <LayoutContent data={data} {...props}>
+      <MetadataContent data={data} {...props}>
         {props.children}
-      </LayoutContent>
+      </MetadataContent>
     )}
   />
 )
 
-Layout.propTypes = {
+Metadata.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -143,6 +143,6 @@ Layout.propTypes = {
   }).isRequired,
 }
 
-Layout.displayName = 'Layout'
+Metadata.displayName = 'Metadata'
 
-export default Layout
+export default Metadata

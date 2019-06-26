@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Layout from 'src/components/Layout'
+import Metadata from 'src/components/Metadata'
 import { getAbsoluteURL, homeURL } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
 import {
@@ -98,7 +98,7 @@ class IndexPage extends React.Component {
     // substantially different content.
     const canonicalURL = getAbsoluteURL(homeURL)
     return (
-      <Layout location={location}>
+      <Metadata location={location}>
         <div>
           <Helmet>
             <link rel="canonical" href={canonicalURL} />
@@ -107,7 +107,7 @@ class IndexPage extends React.Component {
             <p>Coming soon.</p>
           </div>
         </div>
-      </Layout>
+      </Metadata>
     )
   }
 }
