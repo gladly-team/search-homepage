@@ -24,7 +24,7 @@ afterEach(() => {
 describe('index page', () => {
   it('renders without error', () => {
     const IndexPage = require('../index').default
-    shallow(<IndexPage {...getMockProps()} />)
+    shallow(<IndexPage {...getMockProps()} />).dive()
   })
 
   it('stores the referrer ID in local storage when it is a vanity URL', () => {
@@ -34,7 +34,7 @@ describe('index page', () => {
     // a page created for a vanity referrer URL.
     const mockProps = getMockProps()
     mockProps.pageContext = { referrer: { id: 123 } }
-    shallow(<IndexPage {...mockProps} />)
+    shallow(<IndexPage {...mockProps} />).dive()
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'search.referralData.referringChannel',
       123
@@ -46,7 +46,7 @@ describe('index page', () => {
     const IndexPage = require('../index').default
     const mockProps = getMockProps()
     mockProps.pageContext = {}
-    shallow(<IndexPage {...mockProps} />)
+    shallow(<IndexPage {...mockProps} />).dive()
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
@@ -64,7 +64,7 @@ describe('index page', () => {
       }
     })
 
-    shallow(<IndexPage {...getMockProps()} />)
+    shallow(<IndexPage {...getMockProps()} />).dive()
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'search.referralData.referringChannel',
       234
@@ -79,7 +79,7 @@ describe('index page', () => {
       .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
-    shallow(<IndexPage {...getMockProps()} />)
+    shallow(<IndexPage {...getMockProps()} />).dive()
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
@@ -97,14 +97,14 @@ describe('index page', () => {
       }
     })
 
-    shallow(<IndexPage {...getMockProps()} />)
+    shallow(<IndexPage {...getMockProps()} />).dive()
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
   it('sets the canonical URL', () => {
     const IndexPage = require('../index').default
     getAbsoluteURL.mockReturnValue('https://somewebsite.com/')
-    const wrapper = shallow(<IndexPage {...getMockProps()} />)
+    const wrapper = shallow(<IndexPage {...getMockProps()} />).dive()
     const elem = wrapper.find('link[rel="canonical"]')
     expect(elem.exists()).toBe(true)
     expect(elem.prop('href')).toBe('https://somewebsite.com/')
@@ -123,7 +123,7 @@ describe('index page', () => {
       }
     })
 
-    shallow(<IndexPage {...getMockProps()} />)
+    shallow(<IndexPage {...getMockProps()} />).dive()
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'search.referralData.referringUser',
       'bobert'
@@ -137,7 +137,7 @@ describe('index page', () => {
       .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
-    shallow(<IndexPage {...getMockProps()} />)
+    shallow(<IndexPage {...getMockProps()} />).dive()
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 })
