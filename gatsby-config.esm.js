@@ -25,12 +25,6 @@ module.exports = {
       resolve: `gatsby-plugin-material-ui`,
     },
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/themes/typography`,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
