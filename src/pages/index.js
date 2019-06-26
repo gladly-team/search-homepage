@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Typography from '@material-ui/core/Typography'
 
+import logoWithText from 'src/img/logo-with-text.svg'
 import Metadata from 'src/components/Metadata'
 import { getAbsoluteURL, homeURL } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
@@ -100,12 +101,24 @@ class IndexPage extends React.Component {
     const canonicalURL = getAbsoluteURL(homeURL)
     return (
       <Metadata location={location}>
-        <div>
-          <Helmet>
-            <link rel="canonical" href={canonicalURL} />
-          </Helmet>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography variant={'body2'}>Coming soon.</Typography>
+        <Helmet>
+          <link rel="canonical" href={canonicalURL} />
+        </Helmet>
+        <div style={{ height: '100vh' }}>
+          <div
+            style={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              boxSizing: 'border-box',
+            }}
+          >
+            <div style={{ paddingBottom: 40 }}>
+              <img src={logoWithText} style={{ height: 60 }} />
+              <Typography variant={'body2'}>Coming soon.</Typography>
+            </div>
           </div>
         </div>
       </Metadata>
