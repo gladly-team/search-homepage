@@ -169,6 +169,7 @@ class IndexPage extends React.Component {
             <img src={logoWithText} className={classes.logo} />
             <div>
               <Input
+                autoFocus
                 data-test-id={'search-input'}
                 type={'text'}
                 onChange={e => {
