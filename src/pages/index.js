@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import Typography from '@material-ui/core/Typography'
 
 import Metadata from 'src/components/Metadata'
 import { getAbsoluteURL, homeURL } from 'src/utils/navigation'
@@ -104,7 +105,7 @@ class IndexPage extends React.Component {
             <link rel="canonical" href={canonicalURL} />
           </Helmet>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <p>Coming soon.</p>
+            <Typography variant={'body2'}>Coming soon.</Typography>
           </div>
         </div>
       </Metadata>

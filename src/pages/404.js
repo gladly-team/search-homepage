@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 import Helmet from 'react-helmet'
 import Link from 'src/components/Link'
 import { homeURL } from 'src/utils/navigation'
@@ -40,11 +41,16 @@ class NotFoundPage extends React.Component {
               padding: 20,
             }}
           >
-            <h1>Oops! Nothing here.</h1>
-            <p style={{ marginBottom: 0, padding: '0px 20px' }}>
+            <Typography variant={'h5'} gutterBottom>
+              Oops! Nothing here.
+            </Typography>
+            <Typography
+              variant={'body2'}
+              style={{ marginBottom: 0, padding: '0px 20px' }}
+            >
               Sorry about that! You probably weren't looking for cake, but have
               some cake anyway <span className={styles.cakeEmoji} />
-            </p>
+            </Typography>
             <Link to={homeURL} style={{ margin: 18 }}>
               <Button variant="contained" color="primary" size="large">
                 Head back home
