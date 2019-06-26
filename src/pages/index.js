@@ -14,13 +14,6 @@ import { getUrlParameterValue } from 'src/utils/location'
 // import styles from './index.module.css'
 
 class IndexPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showUnsupportedBrowserMessage: false,
-    }
-  }
-
   componentDidMount() {
     // Check if the user came from referring channel (a non-user
     // referral source); if so, and store the referrer ID.
@@ -94,18 +87,6 @@ class IndexPage extends React.Component {
    */
   storeReferringUser(referringUser) {
     localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_USER, referringUser)
-  }
-
-  showUnsupportedBrowserMessage() {
-    this.setState({
-      showUnsupportedBrowserMessage: true,
-    })
-  }
-
-  hideUnsupportedBrowserMessage() {
-    this.setState({
-      showUnsupportedBrowserMessage: false,
-    })
   }
 
   render() {
