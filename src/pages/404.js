@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Helmet from 'react-helmet'
+import Header from 'src/components/Header'
 import Link from 'src/components/Link'
 import { homeURL } from 'src/utils/navigation'
 import { withTheme } from '@material-ui/styles'
@@ -16,6 +17,7 @@ class NotFoundPage extends React.Component {
     const openGraphDescription = 'This page seems to be missing.'
     return (
       <Metadata location={location}>
+        <Header />
         <div
           style={{
             height: '100%',
