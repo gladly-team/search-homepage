@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
 import Helmet from 'react-helmet'
-import Typography from '@material-ui/core/Typography'
+import Input from '@material-ui/core/Input'
+import IconButton from '@material-ui/core/IconButton'
+import InputAdornment from '@material-ui/core/InputAdornment'
+import SearchIcon from '@material-ui/icons/Search'
 
 import logoWithText from 'src/img/logo-with-text.svg'
 import Metadata from 'src/components/Metadata'
@@ -13,9 +17,60 @@ import {
 } from 'src/utils/constants'
 import { getUrlParameterValue } from 'src/utils/location'
 
-// import styles from './index.module.css'
+const searchBoxBorderColor = '#ced4da'
+const searchBoxBorderColorFocused = '#bdbdbd'
+
+const styles = theme => ({
+  pageContainer: {
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    boxSizing: 'border-box',
+  },
+  centerContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    paddingBottom: 40,
+    width: 500,
+    maxWidth: '80%',
+    minWidth: 300,
+  },
+  logo: {
+    height: 60,
+    marginBottom: 26,
+  },
+  inputRootStyle: {
+    padding: 0,
+    borderRadius: 28,
+    backgroundColor: theme.palette.common.white,
+    border: `1px solid ${searchBoxBorderColor}`,
+    fontSize: 16,
+    boxShadow: '0rem 0rem 0.02rem 0.02rem rgba(0, 0, 0, 0.1)',
+    transition: theme.transitions.create(['border-color', 'box-shadow']),
+    '&:hover': {
+      borderColor: searchBoxBorderColorFocused,
+      boxShadow: '0rem 0.05rem 0.2rem 0.05rem rgba(0, 0, 0, 0.1)',
+    },
+  },
+  inputRootFocused: {
+    borderColor: searchBoxBorderColorFocused,
+    boxShadow: '0rem 0.05rem 0.2rem 0.05rem rgba(0, 0, 0, 0.1)',
+  },
+  inputStyle: {
+    padding: '12px 16px',
+  },
+})
 
 class IndexPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      query: '',
+    }
+  }
+
   componentDidMount() {
     // Check if the user came from referring channel (a non-user
     // referral source); if so, and store the referrer ID.
@@ -91,8 +146,13 @@ class IndexPage extends React.Component {
     localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_USER, referringUser)
   }
 
+  search() {
+    const { query } = this.state
+    console.log(`Going to search for ${query}`)
+  }
+
   render() {
-    const { location } = this.props
+    const { classes, location } = this.props
 
     // Always set the canonical URL to the homepage, which will
     // consolidate any pages using vanity URL paths or referral
@@ -104,20 +164,44 @@ class IndexPage extends React.Component {
         <Helmet>
           <link rel="canonical" href={canonicalURL} />
         </Helmet>
-        <div style={{ height: '100vh' }}>
-          <div
-            style={{
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              boxSizing: 'border-box',
-            }}
-          >
-            <div style={{ paddingBottom: 40 }}>
-              <img src={logoWithText} style={{ height: 60 }} />
-              <Typography variant={'body2'}>Coming soon.</Typography>
+        <div className={classes.pageContainer}>
+          <div className={classes.centerContent}>
+            <img src={logoWithText} className={classes.logo} />
+            <div>
+              <Input
+                data-test-id={'search-input'}
+                type={'text'}
+                onChange={e => {
+                  this.setState({
+                    query: e.target.value,
+                  })
+                }}
+                onKeyPress={e => {
+                  if (e.key === 'Enter') {
+                    this.search()
+                  }
+                }}
+                placeholder={'Search to raise money for charity...'}
+                disableUnderline
+                fullWidth
+                classes={{
+                  root: classes.inputRootStyle,
+                  input: classes.inputStyle,
+                  focused: classes.inputRootFocused,
+                }}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="Search button"
+                      onClick={this.search.bind(this)}
+                    >
+                      <SearchIcon
+                        style={{ color: searchBoxBorderColorFocused }}
+                      />
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
             </div>
           </div>
         </div>
@@ -127,6 +211,7 @@ class IndexPage extends React.Component {
 }
 
 IndexPage.propTypes = {
+  classes: PropTypes.object.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
@@ -137,4 +222,6 @@ IndexPage.propTypes = {
   }),
 }
 
-export default IndexPage
+IndexPage.defaultProps = {}
+
+export default withStyles(styles, { withTheme: true })(IndexPage)
