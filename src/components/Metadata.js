@@ -16,71 +16,50 @@ export const MetadataContent = props => {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          height: '100vh',
-          background: '#fff',
-        }}
+      <Helmet
+        titleTemplate={`%s - ${data.site.siteMetadata.title}`}
+        defaultTitle={data.site.siteMetadata.title}
       >
-        <div
-          style={{
-            flex: '1 0 auto',
-          }}
-        >
-          <Helmet
-            titleTemplate={`%s - ${data.site.siteMetadata.title}`}
-            defaultTitle={data.site.siteMetadata.title}
-          >
-            <meta
-              name="description"
-              content={data.site.siteMetadata.descriptionLong}
-            />
-            <meta name="keywords" content={data.site.siteMetadata.keywords} />
-            <link rel="canonical" href={absoluteUrl} />
-            <link rel="icon" href={Favicon} />
-            <meta property="og:type" content="website" />
-            <meta property="fb:app_id" content="774381839264847" />
-            <meta property="og:url" content={absoluteUrl} />
-            <meta
-              property="og:title"
-              content={data.site.siteMetadata.metaTagCallToAction}
-            />
-            <meta
-              property="og:description"
-              content={data.site.siteMetadata.descriptionShort}
-            />
-            <meta property="og:image" content={openGraphImgAbsolutePath} />
-            <meta
-              name="twitter:title"
-              content={data.site.siteMetadata.metaTagCallToAction}
-            />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta
-              name="twitter:description"
-              content={data.site.siteMetadata.descriptionShort}
-            />
-            <meta
-              name="twitter:site"
-              content={data.site.siteMetadata.twitterHandle}
-            />
-            <meta
-              name="twitter:creator"
-              content={data.site.siteMetadata.twitterHandle}
-            />
-            <meta name="twitter:image" content={openGraphImgAbsolutePath} />
-            <meta name="twitter:domain" content={domain} />
-          </Helmet>
-          <div
-            style={{
-              paddingTop: 0,
-            }}
-          >
-            {children}
-          </div>
-        </div>
-      </div>
+        <meta
+          name="description"
+          content={data.site.siteMetadata.descriptionLong}
+        />
+        <meta name="keywords" content={data.site.siteMetadata.keywords} />
+        <link rel="canonical" href={absoluteUrl} />
+        <link rel="icon" href={Favicon} />
+        <meta property="og:type" content="website" />
+        <meta property="fb:app_id" content="774381839264847" />
+        <meta property="og:url" content={absoluteUrl} />
+        <meta
+          property="og:title"
+          content={data.site.siteMetadata.metaTagCallToAction}
+        />
+        <meta
+          property="og:description"
+          content={data.site.siteMetadata.descriptionShort}
+        />
+        <meta property="og:image" content={openGraphImgAbsolutePath} />
+        <meta
+          name="twitter:title"
+          content={data.site.siteMetadata.metaTagCallToAction}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:description"
+          content={data.site.siteMetadata.descriptionShort}
+        />
+        <meta
+          name="twitter:site"
+          content={data.site.siteMetadata.twitterHandle}
+        />
+        <meta
+          name="twitter:creator"
+          content={data.site.siteMetadata.twitterHandle}
+        />
+        <meta name="twitter:image" content={openGraphImgAbsolutePath} />
+        <meta name="twitter:domain" content={domain} />
+      </Helmet>
+      <div>{children}</div>
     </ThemeProvider>
   )
 }
