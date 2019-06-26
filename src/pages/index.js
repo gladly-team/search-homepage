@@ -23,6 +23,7 @@ const searchBoxBorderColorFocused = '#bdbdbd'
 const styles = theme => ({
   pageContainer: {
     height: '100vh',
+    minHeight: 360, // so we don't hide the search input
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -32,7 +33,7 @@ const styles = theme => ({
   centerContent: {
     display: 'flex',
     flexDirection: 'column',
-    paddingBottom: 80,
+    paddingBottom: 200, // for visually-appealing vertical centering
     width: 500,
     maxWidth: '80%',
     minWidth: 300,
