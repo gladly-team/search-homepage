@@ -1,13 +1,8 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
-// Text on white background
-export const textColor = 'rgba(33, 33, 33, 0.82)'
-
-// On white, equivalent to 'rgba(33, 33, 33, 0.56)'
-export const lighterTextColor = '#838383'
-
-// On white, equivalent to 'rgba(33, 33, 33, 0.22)'
-export const lightestTextColor = '#cecece'
+export const textColor = 'rgba(0, 0, 0, 0.87)'
+export const lighterTextColor = 'rgba(0, 0, 0, 0.64)'
+export const lightestTextColor = 'rgba(0, 0, 0, 0.44)'
 
 // Shading
 
@@ -26,7 +21,6 @@ export const primaryMainColor = '#00b597'
 export const primaryContrastTextColor = '#fff'
 export const secondaryMainColor = '#4a90e2'
 export const secondaryContrastTextColor = '#fff'
-export const baseFontSize = 16
 
 const theme = createMuiTheme({
   palette: {
@@ -53,8 +47,39 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-    fontSize: baseFontSize,
+    fontSize: 14,
     useNextVariants: true,
+    h1: {
+      color: textColor,
+      fontWeight: '500',
+    },
+    h2: {
+      color: textColor,
+    },
+    h3: {
+      color: lighterTextColor,
+    },
+    h4: {
+      color: lighterTextColor,
+    },
+    h5: {
+      color: lighterTextColor,
+      lineHeight: '1.24',
+    },
+    h6: {
+      color: lighterTextColor,
+      lineHeight: '1.24',
+    },
+    body2: {
+      color: lightestTextColor,
+      lineHeight: '1.24',
+    },
+    body1: {
+      color: lightestTextColor,
+    },
+    caption: {
+      color: lightestTextColor,
+    },
   },
   overrides: {
     MuiButton: {
