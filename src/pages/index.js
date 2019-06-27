@@ -9,6 +9,7 @@ import SearchIcon from '@material-ui/icons/Search'
 
 import logoWithText from 'src/img/logo-with-text.svg'
 import Metadata from 'src/components/Metadata'
+import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import { getAbsoluteURL, homeURL } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
 import {
@@ -168,6 +169,9 @@ class IndexPage extends React.Component {
           <link rel="canonical" href={canonicalURL} />
         </Helmet>
         <div className={classes.pageContainer}>
+          <MoneyRaisedDisplay
+            style={{ position: 'absolute', top: 28, right: 40 }}
+          />
           <div className={classes.centerContent}>
             <img src={logoWithText} className={classes.logo} />
             <div>
