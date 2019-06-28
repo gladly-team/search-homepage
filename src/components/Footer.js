@@ -10,7 +10,6 @@ import {
   privacyPolicyURL,
   termsURL,
 } from 'src/utils/navigation'
-import logoGrey from 'src/img/logo-grey.svg'
 import {
   lightestShadingColor,
   lighterTextColor,

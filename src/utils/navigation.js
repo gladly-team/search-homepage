@@ -12,7 +12,7 @@ export const adblockerWhitelistingURL =
 
 // Zendesk
 export const externalHelpURL =
-  'https://gladly.zendesk.com/hc/en-us/categories/201939608-Tab-for-a-Cause'
+  'https://gladly.zendesk.com/hc/en-us/categories/360001779552-Search-for-a-Cause'
 export const externalContactUsURL =
   'https://gladly.zendesk.com/hc/en-us/requests/new'
 
