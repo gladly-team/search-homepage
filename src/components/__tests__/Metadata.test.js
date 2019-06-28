@@ -27,41 +27,41 @@ const getMockProps = () => ({
 
 describe('index layout page', () => {
   it('renders without error', () => {
-    const { LayoutContent } = require('../Layout')
-    shallow(<LayoutContent {...getMockProps()} />)
+    const { MetadataContent } = require('../Metadata')
+    shallow(<MetadataContent {...getMockProps()} />)
   })
 
   it('sets the canonical URL', () => {
-    const { LayoutContent } = require('../Layout')
-    const wrapper = shallow(<LayoutContent {...getMockProps()} />)
+    const { MetadataContent } = require('../Metadata')
+    const wrapper = shallow(<MetadataContent {...getMockProps()} />)
     const elem = wrapper.find('link[rel="canonical"]')
     expect(elem.prop('href')).toBe('https://search.gladly.io/')
   })
 
   it('sets the default page title using Helmet', () => {
-    const { LayoutContent } = require('../Layout')
-    const wrapper = shallow(<LayoutContent {...getMockProps()} />)
+    const { MetadataContent } = require('../Metadata')
+    const wrapper = shallow(<MetadataContent {...getMockProps()} />)
     const elem = wrapper.find(Helmet)
     expect(elem.prop('defaultTitle')).toBe('My Example Site')
   })
 
   it('sets the open graph title to the call-to-action text', () => {
-    const { LayoutContent } = require('../Layout')
-    const wrapper = shallow(<LayoutContent {...getMockProps()} />)
+    const { MetadataContent } = require('../Metadata')
+    const wrapper = shallow(<MetadataContent {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:title"]')
     expect(elem.prop('content')).toBe('Check this out!')
   })
 
   it('sets the open graph description', () => {
-    const { LayoutContent } = require('../Layout')
-    const wrapper = shallow(<LayoutContent {...getMockProps()} />)
+    const { MetadataContent } = require('../Metadata')
+    const wrapper = shallow(<MetadataContent {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:description"]')
     expect(elem.prop('content')).toBe('A shorter description')
   })
 
   it('sets the open graph image', () => {
-    const { LayoutContent } = require('../Layout')
-    const wrapper = shallow(<LayoutContent {...getMockProps()} />)
+    const { MetadataContent } = require('../Metadata')
+    const wrapper = shallow(<MetadataContent {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:image"]')
     expect(elem.prop('content')).toBe(
       'https://search.gladly.io/static/some-image.png'

@@ -29,7 +29,9 @@ class Link extends React.Component {
     const { children, to, style, hoverStyle } = this.props
 
     const linkStyle = Object.assign(
-      {},
+      {
+        textDecoration: 'none',
+      },
       style,
       this.state.hover ? hoverStyle : null
     )

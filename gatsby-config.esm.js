@@ -25,12 +25,6 @@ module.exports = {
       resolve: `gatsby-plugin-material-ui`,
     },
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/themes/typography`,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
@@ -40,10 +34,6 @@ module.exports = {
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-plugin-sitemap`,
-      options: {
-        // Exclude pages that just redirect.
-        exclude: ['/help', '/contact'],
-      },
     },
     {
       resolve: `gatsby-plugin-robots-txt`,

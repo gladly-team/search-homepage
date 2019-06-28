@@ -1,3 +1,4 @@
 .cake-emoji:after {
   content: '\1F370\1F60B';
+  color: #000;
 }
