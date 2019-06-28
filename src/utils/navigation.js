@@ -29,3 +29,12 @@ export const getAbsoluteURL = path => {
   }
   return `${baseURL}${path}`
 }
+
+/**
+ * Set window.location to a new URL
+ * @param {String} newURL - The URL to navigate to
+ * @return {undefined}
+ */
+export const externalRedirect = externalURL => {
+  window.location = externalURL
+}

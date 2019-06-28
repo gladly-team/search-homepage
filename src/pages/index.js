@@ -11,7 +11,7 @@ import logoWithText from 'src/img/logo-with-text.svg'
 import Metadata from 'src/components/Metadata'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import Footer from 'src/components/Footer'
-import { getAbsoluteURL, homeURL } from 'src/utils/navigation'
+import { getAbsoluteURL, externalRedirect, homeURL } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
@@ -152,9 +152,9 @@ class IndexPage extends React.Component {
 
   search() {
     const { query } = this.state
-    window.location = `https://tab.gladly.io/search?q=${encodeURIComponent(
-      query
-    )}&src=self`
+    externalRedirect(
+      `https://tab.gladly.io/search?q=${encodeURIComponent(query)}&src=self`
+    )
   }
 
   // FIXME: when the input renders with existing state, the component
