@@ -8,6 +8,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import SearchIcon from '@material-ui/icons/Search'
 
 import logoWithText from 'src/img/logo-with-text.svg'
+import elephantTreesImg from 'src/img/rain-trees.png'
 import Metadata from 'src/components/Metadata'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import Footer from 'src/components/Footer'
@@ -64,6 +65,13 @@ const styles = theme => ({
   },
   inputStyle: {
     padding: '12px 16px',
+  },
+  backgroundImg: {
+    position: 'absolute',
+    bottom: 60,
+    left: 0,
+    width: '80%',
+    zIndex: -1,
   },
 })
 
@@ -211,6 +219,7 @@ class IndexPage extends React.Component {
               />
             </div>
           </div>
+          <img src={elephantTreesImg} className={classes.backgroundImg} />
           <Footer style={{ marginTop: 'auto' }} />
         </div>
       </Metadata>

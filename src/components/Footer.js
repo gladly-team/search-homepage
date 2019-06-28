@@ -10,11 +10,7 @@ import {
   privacyPolicyURL,
   termsURL,
 } from 'src/utils/navigation'
-import {
-  lightestShadingColor,
-  lighterTextColor,
-  lightestTextColor,
-} from 'src/themes/theme'
+import { lighterTextColor, lightestTextColor } from 'src/themes/theme'
 import Link from 'src/components/Link'
 
 class Footer extends React.Component {
@@ -33,8 +29,8 @@ class Footer extends React.Component {
         style={Object.assign(
           {},
           {
-            background: lightestShadingColor,
-            paddingTop: 1,
+            background: '#f8f8f8',
+            paddingTop: 0,
             paddingBottom: 20,
             paddingLeft: 40,
             paddingRight: 40,
