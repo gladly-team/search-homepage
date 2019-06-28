@@ -1,6 +1,7 @@
 import React from 'react'
 import Divider from '@material-ui/core/Divider'
 import PropTypes from 'prop-types'
+import Typography from '@material-ui/core/Typography'
 
 import {
   externalContactUsURL,
@@ -60,7 +61,7 @@ class Footer extends React.Component {
             }}
           >
             <Link to="/">
-              <img src={logoGrey} style={{ height: 43 }} />
+              <img src={logoGrey} style={{ height: 43, width: 43 }} />
             </Link>
             <div
               style={{
@@ -75,35 +76,35 @@ class Footer extends React.Component {
                 style={footerLinkStyle}
                 hoverStyle={hoverLinkStyle}
               >
-                Financials
+                <Typography variant={'caption'}>Financials</Typography>
               </Link>
               <Link
                 to={externalHelpURL}
                 style={footerLinkStyle}
                 hoverStyle={hoverLinkStyle}
               >
-                FAQ
+                <Typography variant={'caption'}>FAQ</Typography>
               </Link>
               <Link
                 to={termsURL}
                 style={footerLinkStyle}
                 hoverStyle={hoverLinkStyle}
               >
-                Terms
+                <Typography variant={'caption'}>Terms</Typography>
               </Link>
               <Link
                 to={privacyPolicyURL}
                 style={footerLinkStyle}
                 hoverStyle={hoverLinkStyle}
               >
-                Privacy
+                <Typography variant={'caption'}>Privacy</Typography>
               </Link>
               <Link
                 to={externalContactUsURL}
                 style={footerLinkStyle}
                 hoverStyle={hoverLinkStyle}
               >
-                Contact
+                <Typography variant={'caption'}>Contact</Typography>
               </Link>
             </div>
           </div>
