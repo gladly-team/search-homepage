@@ -35,7 +35,7 @@ const styles = theme => ({
   centerContent: {
     display: 'flex',
     flexDirection: 'column',
-    paddingBottom: 110, // for visually-appealing vertical centering
+    paddingBottom: 140, // for visually-appealing vertical centering
     width: 500,
     maxWidth: '80%',
     minWidth: 300,

@@ -24,7 +24,7 @@ class Footer extends React.Component {
     const footerLinkStyle = {
       color: lightestTextColor,
       fontSize: 12,
-      margin: 20,
+      margin: '0px 20px',
     }
     const hoverLinkStyle = {
       color: lighterTextColor,
@@ -49,64 +49,53 @@ class Footer extends React.Component {
         <div
           style={{
             display: 'flex',
-            justifyContent: 'space-between',
+            justifyContent: 'flex-start',
+            flexWrap: 'nowrap',
+            alignItems: 'center',
           }}
         >
           <div
             style={{
               display: 'flex',
+              flexWrap: 'wrap',
               justifyContent: 'flex-start',
-              flexWrap: 'nowrap',
-              alignItems: 'center',
             }}
           >
-            <Link to="/">
-              <img src={logoGrey} style={{ height: 43, width: 43 }} />
-            </Link>
-            <div
-              style={{
-                marginLeft: 30,
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'flex-start',
-              }}
+            <Link
+              to={financialsURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
             >
-              <Link
-                to={financialsURL}
-                style={footerLinkStyle}
-                hoverStyle={hoverLinkStyle}
-              >
-                <Typography variant={'caption'}>Financials</Typography>
-              </Link>
-              <Link
-                to={externalHelpURL}
-                style={footerLinkStyle}
-                hoverStyle={hoverLinkStyle}
-              >
-                <Typography variant={'caption'}>FAQ</Typography>
-              </Link>
-              <Link
-                to={termsURL}
-                style={footerLinkStyle}
-                hoverStyle={hoverLinkStyle}
-              >
-                <Typography variant={'caption'}>Terms</Typography>
-              </Link>
-              <Link
-                to={privacyPolicyURL}
-                style={footerLinkStyle}
-                hoverStyle={hoverLinkStyle}
-              >
-                <Typography variant={'caption'}>Privacy</Typography>
-              </Link>
-              <Link
-                to={externalContactUsURL}
-                style={footerLinkStyle}
-                hoverStyle={hoverLinkStyle}
-              >
-                <Typography variant={'caption'}>Contact</Typography>
-              </Link>
-            </div>
+              <Typography variant={'caption'}>Financials</Typography>
+            </Link>
+            <Link
+              to={externalHelpURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
+            >
+              <Typography variant={'caption'}>FAQ</Typography>
+            </Link>
+            <Link
+              to={termsURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
+            >
+              <Typography variant={'caption'}>Terms</Typography>
+            </Link>
+            <Link
+              to={privacyPolicyURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
+            >
+              <Typography variant={'caption'}>Privacy</Typography>
+            </Link>
+            <Link
+              to={externalContactUsURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
+            >
+              <Typography variant={'caption'}>Contact</Typography>
+            </Link>
           </div>
         </div>
       </div>
