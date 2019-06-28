@@ -157,6 +157,9 @@ class IndexPage extends React.Component {
     )}&src=self`
   }
 
+  // FIXME: when the input renders with existing state, the component
+  // state does not have the correct query (e.g. search, then hit back
+  // button, then search again)
   render() {
     const { classes, location } = this.props
 

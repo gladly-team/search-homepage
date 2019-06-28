@@ -4,6 +4,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import { getAbsoluteURL } from 'src/utils/navigation'
+import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
+import Footer from 'src/components/Footer'
 
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/location')
@@ -139,5 +141,17 @@ describe('index page', () => {
 
     shallow(<IndexPage {...getMockProps()} />).dive()
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('renders the MoneyRaisedDisplay', () => {
+    const IndexPage = require('../index').default
+    const wrapper = shallow(<IndexPage {...getMockProps()} />).dive()
+    expect(wrapper.find(MoneyRaisedDisplay).exists()).toBe(true)
+  })
+
+  it('renders the Footer', () => {
+    const IndexPage = require('../index').default
+    const wrapper = shallow(<IndexPage {...getMockProps()} />).dive()
+    expect(wrapper.find(Footer).exists()).toBe(true)
   })
 })
