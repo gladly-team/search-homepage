@@ -10,6 +10,7 @@ import SearchIcon from '@material-ui/icons/Search'
 import logoWithText from 'src/img/logo-with-text.svg'
 import Metadata from 'src/components/Metadata'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
+import Footer from 'src/components/Footer'
 import { getAbsoluteURL, homeURL } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
 import {
@@ -34,10 +35,11 @@ const styles = theme => ({
   centerContent: {
     display: 'flex',
     flexDirection: 'column',
-    paddingBottom: 200, // for visually-appealing vertical centering
+    paddingBottom: 110, // for visually-appealing vertical centering
     width: 500,
     maxWidth: '80%',
     minWidth: 300,
+    marginTop: 'auto',
   },
   logo: {
     height: 60,
@@ -212,6 +214,7 @@ class IndexPage extends React.Component {
               />
             </div>
           </div>
+          <Footer style={{ marginTop: 'auto' }} />
         </div>
       </Metadata>
     )
