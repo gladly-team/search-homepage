@@ -1,15 +1,20 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import { getAbsoluteURL } from 'src/utils/navigation'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import Footer from 'src/components/Footer'
+import Input from '@material-ui/core/Input'
+import { externalRedirect } from 'src/utils/navigation'
 
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
+jest.mock('src/components/Footer')
+jest.mock('src/components/Metadata')
+jest.mock('src/components/MoneyRaisedDisplay')
 
 const getMockProps = () => ({
   location: {
@@ -153,5 +158,41 @@ describe('index page', () => {
     const IndexPage = require('../index').default
     const wrapper = shallow(<IndexPage {...getMockProps()} />).dive()
     expect(wrapper.find(Footer).exists()).toBe(true)
+  })
+
+  it('redirects to the SERP when hitting enter in the search bar', () => {
+    const IndexPage = require('../index').default
+    const mockProps = getMockProps()
+    const wrapper = mount(<IndexPage {...mockProps} />)
+    const searchInput = wrapper
+      .find(Input)
+      .first()
+      .find('input')
+    searchInput
+      .simulate('change', { target: { value: 'register to vote' } })
+      .simulate('keypress', { key: 'Enter' })
+    expect(externalRedirect).toHaveBeenCalledWith(
+      'https://tab.gladly.io/search?q=register%20to%20vote&src=self'
+    )
+  })
+
+  it('redirects to the SERP when clicking the search icon', () => {
+    const IndexPage = require('../index').default
+    const mockProps = getMockProps()
+    const wrapper = mount(<IndexPage {...mockProps} />)
+    const searchInput = wrapper
+      .find(Input)
+      .first()
+      .find('input')
+
+    // https://github.com/airbnb/enzyme/issues/76#issuecomment-189606849
+    searchInput.simulate('change', { target: { value: 'free ice cream' } })
+
+    searchInput
+      .simulate('change', { target: { value: 'pizza' } })
+      .simulate('keypress', { key: 'Enter' })
+    expect(externalRedirect).toHaveBeenCalledWith(
+      'https://tab.gladly.io/search?q=pizza&src=self'
+    )
   })
 })
