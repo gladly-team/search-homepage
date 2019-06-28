@@ -4,12 +4,12 @@ exports[`Footer matches expected snapshot 1`] = `
 <div
   style={
     Object {
-      "background": "rgba(128, 128, 128, 0.04)",
+      "background": "#f8f8f8",
       "boxSizing": "border-box",
       "paddingBottom": 20,
       "paddingLeft": 40,
       "paddingRight": 40,
-      "paddingTop": 1,
+      "paddingTop": 0,
       "width": "100%",
     }
   }
