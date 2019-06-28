@@ -70,9 +70,7 @@ const styles = theme => ({
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      query: '',
-    }
+    this.searchInput = null
   }
 
   componentDidMount() {
@@ -151,7 +149,7 @@ class IndexPage extends React.Component {
   }
 
   search() {
-    const { query } = this.state
+    const query = this.searchInput.value
     externalRedirect(
       `https://tab.gladly.io/search?q=${encodeURIComponent(query)}&src=self`
     )
@@ -184,11 +182,7 @@ class IndexPage extends React.Component {
                 autoFocus
                 data-test-id={'search-input'}
                 type={'text'}
-                onChange={e => {
-                  this.setState({
-                    query: e.target.value,
-                  })
-                }}
+                inputRef={node => (this.searchInput = node)}
                 onKeyPress={e => {
                   if (e.key === 'Enter') {
                     this.search()
