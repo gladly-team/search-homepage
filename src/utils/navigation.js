@@ -16,6 +16,12 @@ export const externalHelpURL =
 export const externalContactUsURL =
   'https://gladly.zendesk.com/hc/en-us/requests/new'
 
+// Extensions
+export const searchFirefoxExtensionPage =
+  'https://addons.mozilla.org/en-US/firefox/addon/search-for-a-cause/'
+export const searchChromeExtensionPage =
+  'https://chrome.google.com/webstore/detail/search-for-a-cause/eeiiknnphladbapfamiamfimnnnodife/'
+
 /**
  * Append the protocol and domain to return the
  * absolute URL of a path.
