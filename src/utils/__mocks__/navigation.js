@@ -2,9 +2,9 @@
 
 // Most exported values are strings, so just mock
 // what we need to change.
-const navigation = require.requireActual('../navigation')
+const navigation = jest.requireActual('../navigation')
 
-navigation.getAbsoluteURL = jest.fn(path => `https://example.com${path}`)
+navigation.getAbsoluteURL = jest.fn((path) => `https://example.com${path}`)
 
 navigation.externalRedirect = jest.fn()
 

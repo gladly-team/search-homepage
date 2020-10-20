@@ -20,12 +20,7 @@ describe('Header', () => {
   it('defaults to navigates to home on header icon click', () => {
     const Header = require('../Header').default
     const wrapper = mount(<Header />)
-    expect(
-      wrapper
-        .find(Link)
-        .first()
-        .prop('to')
-    ).toEqual('/')
+    expect(wrapper.find(Link).first().prop('to')).toEqual('/')
   })
 
   it('calls onHeaderLogoClick on header icon click', () => {
@@ -46,7 +41,7 @@ describe('Header', () => {
     expect(mockOnHeaderLogoClick).toHaveBeenCalled()
   })
 
-  it('matches expected snapshot', function() {
+  it('matches expected snapshot', function () {
     const Header = require('../Header').default
     const wrapper = shallow(<Header />)
     expect(toJson(wrapper)).toMatchSnapshot()

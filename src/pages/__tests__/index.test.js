@@ -62,7 +62,7 @@ describe('index page', () => {
 
     const getUrlParameterValue = require('src/utils/location')
       .getUrlParameterValue
-    getUrlParameterValue.mockImplementation(param => {
+    getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
           return '234'
@@ -95,7 +95,7 @@ describe('index page', () => {
 
     const getUrlParameterValue = require('src/utils/location')
       .getUrlParameterValue
-    getUrlParameterValue.mockImplementation(param => {
+    getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
           return 'hello'
@@ -121,7 +121,7 @@ describe('index page', () => {
     const IndexPage = require('../index').default
     const getUrlParameterValue = require('src/utils/location')
       .getUrlParameterValue
-    getUrlParameterValue.mockImplementation(param => {
+    getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'u':
           return 'bobert'
@@ -164,10 +164,7 @@ describe('index page', () => {
     const IndexPage = require('../index').default
     const mockProps = getMockProps()
     const wrapper = mount(<IndexPage {...mockProps} />)
-    const searchInput = wrapper
-      .find(Input)
-      .first()
-      .find('input')
+    const searchInput = wrapper.find(Input).first().find('input')
 
     // https://github.com/airbnb/enzyme/issues/76#issuecomment-423774243
     searchInput.instance().value = 'register to vote'
@@ -181,10 +178,7 @@ describe('index page', () => {
     const IndexPage = require('../index').default
     const mockProps = getMockProps()
     const wrapper = mount(<IndexPage {...mockProps} />)
-    const searchInput = wrapper
-      .find(Input)
-      .first()
-      .find('input')
+    const searchInput = wrapper.find(Input).first().find('input')
 
     searchInput.instance().value = 'pizza'
     searchInput.simulate('keypress', { key: 'Enter' })

@@ -22,7 +22,7 @@ import { getUrlParameterValue } from 'src/utils/location'
 const searchBoxBorderColor = '#ced4da'
 const searchBoxBorderColorFocused = '#bdbdbd'
 
-const styles = theme => ({
+const styles = (theme) => ({
   pageContainer: {
     height: '100vh',
     minHeight: 360, // so we don't hide the search input
@@ -182,8 +182,8 @@ class IndexPage extends React.Component {
                 autoFocus
                 data-test-id={'search-input'}
                 type={'text'}
-                inputRef={node => (this.searchInput = node)}
-                onKeyPress={e => {
+                inputRef={(node) => (this.searchInput = node)}
+                onKeyPress={(e) => {
                   if (e.key === 'Enter') {
                     this.search()
                   }
