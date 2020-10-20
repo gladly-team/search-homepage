@@ -9,7 +9,7 @@ import Favicon from 'src/img/logo32x32.png'
 import openGraphImg from 'src/img/opengraph-img.png'
 import { domain, getAbsoluteURL } from 'src/utils/navigation'
 
-export const MetadataContent = props => {
+export const MetadataContent = (props) => {
   const { children, data, location } = props
   const absoluteUrl = getAbsoluteURL(location.pathname)
   const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
@@ -88,7 +88,7 @@ MetadataContent.propTypes = {
 
 MetadataContent.displayName = 'MetadataContent'
 
-const Metadata = props => (
+const Metadata = (props) => (
   <StaticQuery
     query={graphql`
       query MetadataQuery {
@@ -104,7 +104,7 @@ const Metadata = props => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <MetadataContent data={data} {...props}>
         {props.children}
       </MetadataContent>

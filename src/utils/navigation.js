@@ -21,7 +21,7 @@ export const externalContactUsURL =
  * absolute URL of a path.
  * @return {string} The absolute URL
  */
-export const getAbsoluteURL = path => {
+export const getAbsoluteURL = (path) => {
   // If the passed path is already an absolute URL,
   // just return it.
   if (path.startsWith('http://') || path.startsWith('https://')) {
@@ -35,6 +35,6 @@ export const getAbsoluteURL = path => {
  * @param {String} newURL - The URL to navigate to
  * @return {undefined}
  */
-export const externalRedirect = externalURL => {
+export const externalRedirect = (externalURL) => {
   window.location = externalURL
 }
