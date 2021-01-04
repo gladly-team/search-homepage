@@ -3,7 +3,7 @@ name: Run tests
 on: [push, pull_request]
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,8 +14,6 @@ jobs:
           node-version: 14.x
       - name: Install dependencies
         run: yarn install
-      - name: Build
-        run: yarn build
       - name: Run tests
         run: yarn test # generates coverage
       - name: Upload coverage to Codecov
