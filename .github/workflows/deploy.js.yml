@@ -30,6 +30,8 @@ jobs:
         run: |
           echo "GATSBY_S3_BUCKET_NAME=dev-search-website" >> "$GITHUB_ENV"
           echo "GATSBY_DOMAIN=dev-search.gladly.io" >> "$GITHUB_ENV"
+      - name: Install dependencies
+        run: yarn install
       - name: Build
         run: yarn build
       - name: Configure AWS Credentials
