@@ -1,0 +1,42 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+      - kevin/new-ci # TODO: remove
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      # Conditionally set environment variables.
+      # https://github.community/t/github-actions-branch-conditional/16057
+      # https://stackoverflow.com/a/57969570
+      # - name: Set env vars for production (main branch)
+      #   if: github.ref == 'refs/heads/master'
+      #   run: |
+      #     echo "GATSBY_S3_BUCKET_NAME=prod-search-website" >> "$GITHUB_ENV"
+      #     echo "GATSBY_DOMAIN=search.gladly.io" >> "$GITHUB_ENV"
+      - name: Set env vars for dev branch
+        # if: github.ref == 'refs/heads/dev' # TODO: enable
+        run: |
+          echo "GATSBY_S3_BUCKET_NAME=dev-search-website" >> "$GITHUB_ENV"
+          echo "GATSBY_DOMAIN=dev-search.gladly.io" >> "$GITHUB_ENV"
+      - name: Build
+        run: yarn build
+      - name: Configure AWS Credentials
+        uses: aws-actions/configu re-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Deploy
+        run: yarn run deploy

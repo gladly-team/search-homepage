@@ -49,5 +49,11 @@ module.exports = {
         dsn: 'https://38d9e31224b04e4aba61274d50ca3cca@sentry.io/1467750',
       },
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: process.env.GATSBY_S3_BUCKET_NAME,
+      },
+    },
   ],
 }
