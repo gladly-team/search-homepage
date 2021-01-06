@@ -38,8 +38,6 @@ jobs:
         run: yarn build
       # The deploy user needs the following permissions:
       # https://github.com/jariz/gatsby-plugin-s3/issues/39#issuecomment-467379363
-      # Another permissions suggestion:
-      # https://github.com/jariz/gatsby-plugin-s3/issues/39#issuecomment-504088378
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
