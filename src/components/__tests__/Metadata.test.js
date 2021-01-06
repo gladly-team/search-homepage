@@ -3,7 +3,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
+
 jest.mock('src/img/opengraph-img.png', () => '/static/some-image.png')
+jest.mock('src/utils/navigation')
 
 const getMockProps = () => ({
   children: null,
@@ -35,7 +37,7 @@ describe('index layout page', () => {
     const { MetadataContent } = require('../Metadata')
     const wrapper = shallow(<MetadataContent {...getMockProps()} />)
     const elem = wrapper.find('link[rel="canonical"]')
-    expect(elem.prop('href')).toBe('https://search.gladly.io/')
+    expect(elem.prop('href')).toBe('https://example.com/')
   })
 
   it('sets the default page title using Helmet', () => {
@@ -64,7 +66,7 @@ describe('index layout page', () => {
     const wrapper = shallow(<MetadataContent {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:image"]')
     expect(elem.prop('content')).toBe(
-      'https://search.gladly.io/static/some-image.png'
+      'https://example.com/static/some-image.png'
     )
   })
 })
