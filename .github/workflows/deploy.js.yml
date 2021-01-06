@@ -32,6 +32,8 @@ jobs:
           echo "GATSBY_DOMAIN=dev-search.gladly.io" >> "$GITHUB_ENV"
       - name: Install dependencies
         run: yarn install
+      - name: Run tests
+        run: yarn test
       - name: Build
         run: yarn build
       # The deploy user needs the following permissions:
