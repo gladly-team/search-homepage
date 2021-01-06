@@ -6,7 +6,7 @@ env:
   # GATSBY_S3_BUCKET_NAME is required by a Gatsby plugin
   # when we test the build step.
   GATSBY_S3_BUCKET_NAME: dev-search-website
-  GATSBY_DOMAIN: dev-search.gladly.io
+  GATSBY_DOMAIN: search.gladly.io # used in some tests
 
 jobs:
   test:
