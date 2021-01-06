@@ -5,7 +5,6 @@ on:
     branches:
       - master
       - dev
-      - kevin/new-ci # TODO: remove
 
 jobs:
   deploy:
@@ -28,12 +27,6 @@ jobs:
           echo "GATSBY_DOMAIN=search.gladly.io" >> "$GITHUB_ENV"
       - name: Set env vars for dev branch
         if: github.ref == 'refs/heads/dev'
-        run: |
-          echo "GATSBY_S3_BUCKET_NAME=dev-search-website" >> "$GITHUB_ENV"
-          echo "GATSBY_DOMAIN=dev-search.gladly.io" >> "$GITHUB_ENV"
-      # TODO: remove this block
-      - name: Set env vars for dev branch
-        if: github.ref == 'refs/heads/kevin/new-ci'
         run: |
           echo "GATSBY_S3_BUCKET_NAME=dev-search-website" >> "$GITHUB_ENV"
           echo "GATSBY_DOMAIN=dev-search.gladly.io" >> "$GITHUB_ENV"
