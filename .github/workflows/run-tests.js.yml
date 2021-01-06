@@ -2,6 +2,12 @@ name: Run tests
 
 on: [push, pull_request]
 
+env:
+  # GATSBY_S3_BUCKET_NAME is required by a Gatsby plugin
+  # when we test the build step.
+  GATSBY_S3_BUCKET_NAME: dev-search-website
+  GATSBY_DOMAIN: dev-search.gladly.io
+
 jobs:
   test:
     runs-on: ubuntu-latest
