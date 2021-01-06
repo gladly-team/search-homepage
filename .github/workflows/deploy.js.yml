@@ -17,16 +17,23 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      # Conditionally set environment variables.
+      # Conditionally set environment variables depending on
+      # the branch.
       # https://github.community/t/github-actions-branch-conditional/16057
       # https://stackoverflow.com/a/57969570
-      # - name: Set env vars for production (main branch)
-      #   if: github.ref == 'refs/heads/master'
-      #   run: |
-      #     echo "GATSBY_S3_BUCKET_NAME=prod-search-website" >> "$GITHUB_ENV"
-      #     echo "GATSBY_DOMAIN=search.gladly.io" >> "$GITHUB_ENV"
+      - name: Set env vars for production (main branch)
+        if: github.ref == 'refs/heads/master'
+        run: |
+          echo "GATSBY_S3_BUCKET_NAME=prod-search-website" >> "$GITHUB_ENV"
+          echo "GATSBY_DOMAIN=search.gladly.io" >> "$GITHUB_ENV"
       - name: Set env vars for dev branch
-        # if: github.ref == 'refs/heads/dev' # TODO: enable
+        if: github.ref == 'refs/heads/dev'
+        run: |
+          echo "GATSBY_S3_BUCKET_NAME=dev-search-website" >> "$GITHUB_ENV"
+          echo "GATSBY_DOMAIN=dev-search.gladly.io" >> "$GITHUB_ENV"
+      # TODO: remove this block
+      - name: Set env vars for dev branch
+        if: github.ref == 'refs/heads/kevin/new-ci'
         run: |
           echo "GATSBY_S3_BUCKET_NAME=dev-search-website" >> "$GITHUB_ENV"
           echo "GATSBY_DOMAIN=dev-search.gladly.io" >> "$GITHUB_ENV"

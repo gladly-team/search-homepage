@@ -188,8 +188,7 @@ class IndexPage extends React.Component {
                     this.search()
                   }
                 }}
-                // TODO: revert. Only for testing.
-                placeholder={'Search to raise money for charity'}
+                placeholder={'Search to raise money for charity...'}
                 disableUnderline
                 fullWidth
                 classes={{
