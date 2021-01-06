@@ -55,7 +55,7 @@ module.exports = {
         // https://github.com/jariz/gatsby-plugin-s3#configuration
         bucketName: process.env.GATSBY_S3_BUCKET_NAME,
         removeNonexistentObjects: false,
-        acl: false,
+        acl: null,
       },
     },
   ],
