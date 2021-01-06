@@ -74,7 +74,7 @@ describe('index page', () => {
     shallow(<IndexPage {...getMockProps()} />).dive()
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'search.referralData.referringChannel',
-      234
+      234111 // FIXME: intentionally broken to test CI
     )
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
