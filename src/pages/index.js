@@ -62,7 +62,7 @@ const IndexPage = ({ location }) => {
   const searchInputRef = useRef()
   const search = useCallback(() => {
     const query = searchInputRef.current.value
-    const searchURL = `https://tab.gladly.io/search?q=${encodeURIComponent(
+    const searchURL = `https://tab.gladly.io/search/v2?q=${encodeURIComponent(
       query
     )}&src=self`
     externalRedirect(searchURL)
