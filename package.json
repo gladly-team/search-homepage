@@ -24,8 +24,6 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
-    "react-slick": "^0.27.12",
-    "react-transition-group": "^4.4.1",
     "react-typography": "^0.16.19",
     "slick-carousel": "^1.8.1",
     "typography": "^0.16.19"
