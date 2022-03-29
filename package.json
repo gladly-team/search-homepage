@@ -41,8 +41,8 @@
     "format": "eslint --fix 'src/**/*.js'",
     "lint": "eslint 'src/**/*.js'",
     "serve": "GATSBY_TELEMETRY_DISABLED=1 gatsby serve",
-    "test": "yarn run lint && jest --env=jsdom --coverage",
-    "test:watch": "jest --env=jsdom --watch",
+    "test": "NODE_ENV=test yarn run lint && jest --env=jsdom --coverage",
+    "test:watch": "NODE_ENV=test jest --env=jsdom --watch",
     "deploy": "gatsby-plugin-s3 deploy"
   },
   "devDependencies": {
