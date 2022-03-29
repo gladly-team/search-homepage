@@ -14,7 +14,7 @@ exports[`Footer matches expected snapshot 1`] = `
     }
   }
 >
-  <WithStyles(ForwardRef(Divider))
+  <ForwardRef(Divider)
     style={
       Object {
         "marginBottom": 20,
@@ -56,11 +56,11 @@ exports[`Footer matches expected snapshot 1`] = `
         }
         to="https://tab.gladly.io/financials/"
       >
-        <WithStyles(ForwardRef(Typography))
+        <ForwardRef(Typography)
           variant="caption"
         >
           Financials
-        </WithStyles(ForwardRef(Typography))>
+        </ForwardRef(Typography)>
       </Link>
       <Link
         hoverStyle={
@@ -77,11 +77,11 @@ exports[`Footer matches expected snapshot 1`] = `
         }
         to="https://gladly.zendesk.com/hc/en-us/categories/360001779552-Search-for-a-Cause"
       >
-        <WithStyles(ForwardRef(Typography))
+        <ForwardRef(Typography)
           variant="caption"
         >
           FAQ
-        </WithStyles(ForwardRef(Typography))>
+        </ForwardRef(Typography)>
       </Link>
       <Link
         hoverStyle={
@@ -98,11 +98,11 @@ exports[`Footer matches expected snapshot 1`] = `
         }
         to="https://tab.gladly.io/terms/"
       >
-        <WithStyles(ForwardRef(Typography))
+        <ForwardRef(Typography)
           variant="caption"
         >
           Terms
-        </WithStyles(ForwardRef(Typography))>
+        </ForwardRef(Typography)>
       </Link>
       <Link
         hoverStyle={
@@ -119,11 +119,11 @@ exports[`Footer matches expected snapshot 1`] = `
         }
         to="https://tab.gladly.io/privacy/"
       >
-        <WithStyles(ForwardRef(Typography))
+        <ForwardRef(Typography)
           variant="caption"
         >
           Privacy
-        </WithStyles(ForwardRef(Typography))>
+        </ForwardRef(Typography)>
       </Link>
       <Link
         hoverStyle={
@@ -140,11 +140,11 @@ exports[`Footer matches expected snapshot 1`] = `
         }
         to="https://gladly.zendesk.com/hc/en-us/requests/new"
       >
-        <WithStyles(ForwardRef(Typography))
+        <ForwardRef(Typography)
           variant="caption"
         >
           Contact
-        </WithStyles(ForwardRef(Typography))>
+        </ForwardRef(Typography)>
       </Link>
     </div>
   </div>
