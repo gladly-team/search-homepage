@@ -9031,10 +9031,10 @@ md5-file@^5.0.0:
   resolved "https://registry.yarnpkg.com/md5-file/-/md5-file-5.0.0.tgz#e519f631feca9c39e7f9ea1780b63c4745012e20"
   integrity sha512-xbEFXCYVWrSx/gEKS1VPlg84h/4L20znVIulKw6kMfmBUAZNAnF00eczz9ICMl+/hjQGo5KSXRxbL/47X3rmMw==
 
-mdi-material-ui@^6.20.0:
-  version "6.24.0"
-  resolved "https://registry.yarnpkg.com/mdi-material-ui/-/mdi-material-ui-6.24.0.tgz#22271c1d26100501d49a0170bdf3835b40bae8f2"
-  integrity sha512-+s+kSB6nvoN26MTpGNJEokVWqzLhm/glXXrcVLiQjBY/qFg82GPH6ixhfSDpZULWuHhlUfWYp0+dOtO3Ik/Nxw==
+mdi-material-ui@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/mdi-material-ui/-/mdi-material-ui-7.2.0.tgz#e4746b123fd3a438b1cde39eb44329a4c761162d"
+  integrity sha512-tJnT4fY+gJmlq/wt4GYCV5qezOs/cuSysg6N3KRkl2/8dSpyZsL/P5lN4UWZ2ayViwhoRUHns/FCKFnMngJd0g==
 
 mdn-data@2.0.14:
   version "2.0.14"
