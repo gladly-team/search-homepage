@@ -2,9 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-
-import { ThemeProvider } from '@material-ui/styles'
-import defaultTheme from 'src/themes/theme'
 import Favicon from 'src/img/logo32x32.png'
 import openGraphImg from 'src/img/opengraph-img.png'
 import { domain, getAbsoluteURL } from 'src/utils/navigation'
@@ -15,7 +12,7 @@ export const MetadataContent = (props) => {
   const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <>
       <Helmet
         titleTemplate={`%s - ${data.site.siteMetadata.title}`}
         defaultTitle={data.site.siteMetadata.title}
@@ -60,7 +57,7 @@ export const MetadataContent = (props) => {
         <meta name="twitter:domain" content={domain} />
       </Helmet>
       <div>{children}</div>
-    </ThemeProvider>
+    </>
   )
 }
 

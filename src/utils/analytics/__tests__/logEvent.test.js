@@ -1,5 +1,4 @@
 /* eslint-env jest */
-/* globals setImmediate */
 
 // import fbq from '../facebook-analytics'
 import ga from '../google-analytics'
@@ -10,6 +9,16 @@ jest.mock('../google-analytics')
 afterEach(() => {
   jest.clearAllMocks()
 })
+
+/**
+ * Flush the Promise resolution queue. See:
+ * https://github.com/facebook/jest/issues/2157
+ * @return {Promise<undefined>}
+ */
+// See latest:
+// https://github.com/facebook/jest/issues/2157#issuecomment-897935688
+const flushAllPromises = async () =>
+  new Promise(jest.requireActual('timers').setImmediate)
 
 describe('logEvent', () => {
   test('downloadButtonClick resolves when GA calls the hitCallback', async () => {
@@ -27,16 +36,14 @@ describe('logEvent', () => {
       promise.done = true
     })
 
-    // Flush all promises
-    await new Promise((resolve) => setImmediate(resolve))
+    await flushAllPromises()
 
     expect(promise.done).toBe(false)
 
     // Mock firing the GA hitCallback
     hitCallback()
 
-    // Flush all promises
-    await new Promise((resolve) => setImmediate(resolve))
+    await flushAllPromises()
 
     expect(promise.done).toBe(true)
   })
@@ -56,16 +63,14 @@ describe('logEvent', () => {
     // Advance timers, but not past the timeout value.
     jest.advanceTimersByTime(50)
 
-    // Flush all promises
-    await new Promise((resolve) => setImmediate(resolve))
+    await flushAllPromises()
 
     expect(promise.done).toBe(false)
 
     // Advance timers past the timeout value.
     jest.advanceTimersByTime(2000)
 
-    // Flush all promises
-    await new Promise((resolve) => setImmediate(resolve))
+    await flushAllPromises()
 
     expect(promise.done).toBe(true)
   })
