@@ -36,7 +36,7 @@
     "gatsby-transformer-yaml": "^4.11.0",
     "lodash": "^4.17.21",
     "mdi-material-ui": "^7.2.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-helmet": "^6.1.0"
