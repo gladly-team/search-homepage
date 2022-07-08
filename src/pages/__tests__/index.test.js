@@ -65,7 +65,7 @@ describe('index page', () => {
     searchInput.instance().value = 'register to vote'
     searchInput.simulate('keypress', { key: 'Enter' })
     expect(externalRedirect).toHaveBeenCalledWith(
-      'https://tab.gladly.io/search/v2?q=register%20to%20vote&src=self'
+      'https://tab.gladly.io/search?q=register%20to%20vote&src=self'
     )
   })
 
@@ -78,7 +78,7 @@ describe('index page', () => {
     searchInput.instance().value = 'pizza'
     searchInput.simulate('keypress', { key: 'Enter' })
     expect(externalRedirect).toHaveBeenCalledWith(
-      'https://tab.gladly.io/search/v2?q=pizza&src=self'
+      'https://tab.gladly.io/search?q=pizza&src=self'
     )
   })
 })
