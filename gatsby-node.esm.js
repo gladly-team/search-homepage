@@ -2,15 +2,10 @@
 
 import path from 'path'
 import {
-  financialsURL,
   externalFinancialsURL,
-  helpURL,
   externalHelpURL,
-  termsURL,
   externalTermsURL,
-  contactURL,
   externalContactURL,
-  privacyPolicyURL,
   externalPrivacyPolicyURL,
 } from './src/utils/navigation'
 
