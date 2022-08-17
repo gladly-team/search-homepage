@@ -1,6 +1,7 @@
 /* globals exports */
 
 import path from 'path'
+import { externalHelpURL, privacyPolicyURL } from './src/utils/navigation'
 
 /**
  * Implement Gatsby's Node APIs in this file.
@@ -41,5 +42,16 @@ exports.createPages = async ({ actions, graphql }) => {
         },
       },
     })
+  })
+
+  // Create redirects for some pages.
+  const { createRedirect } = actions
+  createRedirect({
+    fromPath: `/faq`,
+    toPath: externalHelpURL,
+  })
+  createRedirect({
+    fromPath: `/privacy`,
+    toPath: privacyPolicyURL,
   })
 }
