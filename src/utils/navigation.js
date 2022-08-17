@@ -4,11 +4,11 @@ export const protocol = 'https'
 export const baseURL = `${protocol}://${domain}`
 
 export const homeURL = '/'
-export const financialsURL = '/financials/'
-export const helpURL = '/help/'
-export const termsURL = '/terms/'
-export const contactURL = '/contact/'
-export const privacyPolicyURL = '/privacy/'
+export const financialsURL = '/financials'
+export const helpURL = '/help'
+export const termsURL = '/terms'
+export const contactURL = '/contact'
+export const privacyPolicyURL = '/privacy'
 
 // Redirects
 export const externalFinancialsURL = 'https://tab.gladly.io/financials/'
