@@ -26,7 +26,7 @@ class Link extends React.Component {
   }
 
   render() {
-    const { children, to, style, hoverStyle } = this.props
+    const { children, to, style, hoverStyle, external } = this.props
 
     const linkStyle = Object.assign(
       {
@@ -38,7 +38,7 @@ class Link extends React.Component {
 
     // This assumes that any internal link (intended for Gatsby) starts
     // with exactly one slash, and that anything else is external.
-    const internal = /^\/(?!\/)/.test(to)
+    const internal = !external && /^\/(?!\/)/.test(to)
 
     // Use Gatsby's Link for internal links, and <a> for others
     if (internal) {
@@ -74,11 +74,13 @@ Link.propTypes = {
   hoverStyle: PropTypes.object,
   style: PropTypes.object,
   to: PropTypes.string.isRequired,
+  external: PropTypes.bool,
 }
 
 Link.defaultProps = {
   hoverStyle: {},
   style: {},
+  external: false,
 }
 
 export default Link

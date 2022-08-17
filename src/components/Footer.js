@@ -64,6 +64,7 @@ class Footer extends React.Component {
               to={financialsURL}
               style={footerLinkStyle}
               hoverStyle={hoverLinkStyle}
+              external
             >
               <Typography variant={'caption'}>Financials</Typography>
             </Link>
@@ -71,6 +72,7 @@ class Footer extends React.Component {
               to={helpURL}
               style={footerLinkStyle}
               hoverStyle={hoverLinkStyle}
+              external
             >
               <Typography variant={'caption'}>FAQ</Typography>
             </Link>
@@ -78,6 +80,7 @@ class Footer extends React.Component {
               to={termsURL}
               style={footerLinkStyle}
               hoverStyle={hoverLinkStyle}
+              external
             >
               <Typography variant={'caption'}>Terms</Typography>
             </Link>
@@ -85,6 +88,7 @@ class Footer extends React.Component {
               to={privacyPolicyURL}
               style={footerLinkStyle}
               hoverStyle={hoverLinkStyle}
+              external
             >
               <Typography variant={'caption'}>Privacy</Typography>
             </Link>
@@ -92,6 +96,7 @@ class Footer extends React.Component {
               to={contactURL}
               style={footerLinkStyle}
               hoverStyle={hoverLinkStyle}
+              external
             >
               <Typography variant={'caption'}>Contact</Typography>
             </Link>

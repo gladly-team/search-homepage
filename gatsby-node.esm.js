@@ -2,15 +2,10 @@
 
 import path from 'path'
 import {
-  financialsURL,
   externalFinancialsURL,
-  helpURL,
   externalHelpURL,
-  termsURL,
   externalTermsURL,
-  contactURL,
   externalContactURL,
-  privacyPolicyURL,
   externalPrivacyPolicyURL,
 } from './src/utils/navigation'
 
@@ -58,23 +53,23 @@ exports.createPages = async ({ actions, graphql }) => {
   // Create redirects for some pages.
   const { createRedirect } = actions
   createRedirect({
-    fromPath: financialsURL,
+    fromPath: `/financials`,
     toPath: externalFinancialsURL,
   })
   createRedirect({
-    fromPath: helpURL,
+    fromPath: `/help`,
     toPath: externalHelpURL,
   })
   createRedirect({
-    fromPath: termsURL,
+    fromPath: `/terms`,
     toPath: externalTermsURL,
   })
   createRedirect({
-    fromPath: contactURL,
+    fromPath: `/contact`,
     toPath: externalContactURL,
   })
   createRedirect({
-    fromPath: privacyPolicyURL,
+    fromPath: `/privacy`,
     toPath: externalPrivacyPolicyURL,
   })
 }
