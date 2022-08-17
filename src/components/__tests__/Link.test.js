@@ -32,6 +32,15 @@ describe('Link', () => {
     })
   })
 
+  it('uses anchor elem when navigating to a relative URL when the "external" prop is true', () => {
+    const Link = require('../Link').default
+    const testUrls = ['/', '/some-url/here/', '/123/', '/thing']
+    testUrls.forEach((testUrl) => {
+      const wrapper = shallow(<Link to={testUrl} external />)
+      expect(wrapper.find('a').length).toBe(1)
+    })
+  })
+
   it('passes style prop to GatsbyLink component', () => {
     const Link = require('../Link').default
     const someStyle = { fontSize: 12, color: '#cdcdcd' }
