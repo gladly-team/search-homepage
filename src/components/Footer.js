@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography'
 
 import {
-  externalContactUsURL,
-  externalHelpURL,
+  contactURL,
+  helpURL,
   financialsURL,
   privacyPolicyURL,
   termsURL,
@@ -68,7 +68,7 @@ class Footer extends React.Component {
               <Typography variant={'caption'}>Financials</Typography>
             </Link>
             <Link
-              to={externalHelpURL}
+              to={helpURL}
               style={footerLinkStyle}
               hoverStyle={hoverLinkStyle}
             >
@@ -89,7 +89,7 @@ class Footer extends React.Component {
               <Typography variant={'caption'}>Privacy</Typography>
             </Link>
             <Link
-              to={externalContactUsURL}
+              to={contactURL}
               style={footerLinkStyle}
               hoverStyle={hoverLinkStyle}
             >

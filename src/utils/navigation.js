@@ -4,17 +4,20 @@ export const protocol = 'https'
 export const baseURL = `${protocol}://${domain}`
 
 export const homeURL = '/'
-export const financialsURL = 'https://tab.gladly.io/financials/'
-export const termsURL = 'https://tab.gladly.io/terms/'
-export const privacyPolicyURL = 'https://tab.gladly.io/privacy/'
-export const adblockerWhitelistingURL =
-  'https://tab.gladly.io/adblockers/search/'
+export const financialsURL = '/financials/'
+export const helpURL = '/help/'
+export const termsURL = '/terms/'
+export const contactURL = '/contact/'
+export const privacyPolicyURL = '/privacy/'
 
-// Zendesk
+// Redirects
+export const externalFinancialsURL = 'https://tab.gladly.io/financials/'
 export const externalHelpURL =
   'https://gladly.zendesk.com/hc/en-us/categories/360001779552-Search-for-a-Cause'
-export const externalContactUsURL =
+export const externalTermsURL = 'https://tab.gladly.io/terms/'
+export const externalContactURL =
   'https://gladly.zendesk.com/hc/en-us/requests/new'
+export const externalPrivacyPolicyURL = 'https://tab.gladly.io/privacy/'
 
 /**
  * Append the protocol and domain to return the
