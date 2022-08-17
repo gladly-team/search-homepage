@@ -54,7 +54,7 @@ exports[`Footer matches expected snapshot 1`] = `
             "margin": "0px 20px",
           }
         }
-        to="/financials/"
+        to="/financials"
       >
         <ForwardRef(Typography)
           variant="caption"
@@ -75,7 +75,7 @@ exports[`Footer matches expected snapshot 1`] = `
             "margin": "0px 20px",
           }
         }
-        to="/help/"
+        to="/help"
       >
         <ForwardRef(Typography)
           variant="caption"
@@ -96,7 +96,7 @@ exports[`Footer matches expected snapshot 1`] = `
             "margin": "0px 20px",
           }
         }
-        to="/terms/"
+        to="/terms"
       >
         <ForwardRef(Typography)
           variant="caption"
@@ -117,7 +117,7 @@ exports[`Footer matches expected snapshot 1`] = `
             "margin": "0px 20px",
           }
         }
-        to="/privacy/"
+        to="/privacy"
       >
         <ForwardRef(Typography)
           variant="caption"
@@ -138,7 +138,7 @@ exports[`Footer matches expected snapshot 1`] = `
             "margin": "0px 20px",
           }
         }
-        to="/contact/"
+        to="/contact"
       >
         <ForwardRef(Typography)
           variant="caption"
