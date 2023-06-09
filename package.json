@@ -26,7 +26,7 @@
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.3",
     "common-tags": "^1.8.0",
-    "gatsby": "^4.11.0",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-material-ui": "^4.1.0",
     "gatsby-plugin-react-helmet": "^5.11.0",
     "gatsby-plugin-robots-txt": "^1.5.3",
